@@ -1,0 +1,16 @@
+<?php use Core\View ?>
+
+<!doctype html>
+<html>
+    <head>
+        <title><?php echo $data["title"]?></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <?php echo (new View("block.bootstrap.styles"))->render()?>
+        <link rel="stylesheet" type="text/css" href="/css/default.css"/>
+    </head>
+    <body>
+        <?php echo $data["content"]?>
+        <?php echo (new View("block.bootstrap.scripts"))->render()?>
+        <?php echo $data["scripts"]?>
+    </body>
+</html>

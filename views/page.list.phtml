@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col order-2 order-md-1 order-sm-2">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Название</th>
+                        <th scope="col">Цена (₽)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // номер название цена
+                    $format = "<tr onClick=\"gotodetails(%d)\" id=\"catalog-row\"> <td>%s</td> <td>%01.2F</td> </tr>";
+                    
+                    $items = $data["items"];
+                    
+                    if( $items !== null && count($items) > 0){
+                        foreach ($items as $item) {
+                            echo sprintf($format, $item->id, $item->name, $item->price);
+                        }
+                    }else{
+                        echo "<tr><td colspan=\"2\" style=\"text-align: center;\">Список товаров пуст</td></tr>";
+                    }
+                    ?>
+                </tbody>
+            </table> 
+        </div>
+        <div class="col-md-3 sidebar order-1 order-md-2 order-sm-1">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-secondary">
+                    Показать все товары
+                </a>
+                <a href="/add" class="list-group-item list-group-item-action">Добавить</a>
+                <a href="/search" class="list-group-item list-group-item-action">Найти</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function gotodetails(id){
+        window.location = "/details/?id="+id;
+    }
+</script>

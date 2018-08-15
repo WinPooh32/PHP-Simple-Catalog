@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col order-2 order-md-1 order-sm-2">          
+            <table class="details table table-striped table-bordered">
+                <tbody>
+                    <tr> <th scope="row">Название</th><td><?php echo $data["item"]->name ?></td></tr>
+                    <tr> <th scope="row">Цена</th><td><?php echo $data["item"]->price ?> ₽</td></tr>
+                    <tr> <th scope="row">Страна</th><td><?php echo $data["item"]->country ?></td></tr>
+                    <tr> <th scope="row">Производитель</th><td><?php echo $data["item"]->manufacturer ?></td></tr>
+                    <tr> <th scope="row">Годен до</th><td><?php echo $data["expires"] ?></td></tr>
+                    <tr> <th scope="row">Описание</th><td><?php echo $data["item"]->description ?></td></tr>
+                </tbody>
+            </table> 
+        </div>
+        <div class="col-md-3 sidebar order-1 order-md-2 order-sm-1">
+            <div class="list-group">
+                <a href="/" class="list-group-item list-group-item-action">
+                    Показать все товары
+                </a>
+                <a href="/add" class="list-group-item list-group-item-action">Добавить</a>
+                <a href="/search" class="list-group-item list-group-item-action">Найти</a>
+            </div>
+            
+            <div class="list-group">
+                <a href="/edit?id=<?php echo $data["item"]->id ?>" class="list-group-item list-group-item-action">Редактировать</a>
+                <a href="/delete?id=<?php echo $data["item"]->id ?>" class="list-group-item list-group-item-action">Удалить</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php-activerecord/php-activerecord": "dev-master",
+        "nxp/russian-porter-stemmer": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    }
+}
